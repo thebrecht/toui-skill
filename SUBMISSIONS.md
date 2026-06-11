@@ -58,7 +58,7 @@ openclaw mcp doctor --probe
 
 - **✅ OpenClaw OAuth probe PASSED 2026-06-11** (`openclaw mcp doctor` → `toui: ok`). Gotcha hit + documented: OAuth code contains colons → `%3A` in the redirect URL; decode to `:` before `openclaw mcp login toui --code <code>`.
 
-**ClawHub skill authored: `clawhub/toui-shorten/SKILL.md`** (zh, LINE allowed; format verified against github.com/openclaw/clawhub docs/skill-format.md). Publish:
+**✅ PUBLISHED 2026-06-11** — `toui-shorten@1.0.0` (release `k9796tc9x438d5agecm5hn4yqx88fggr`) live on ClawHub (PicSee is absent here = clean wedge). Skill source: `clawhub/toui-shorten/SKILL.md` (zh, LINE allowed; format verified against github.com/openclaw/clawhub docs/skill-format.md). Publish command used:
 
 ```bash
 cd /Users/brecht/Projects/combo/toui-skill
