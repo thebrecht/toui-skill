@@ -8,14 +8,14 @@ Ready-to-paste content for the external listing steps. Repo: `https://github.com
 
 ## 1. Smithery — smithery.ai
 
-Hosted remote servers are listed by submitting the URL (no `smithery.yaml`). UI: `smithery.ai/new`. CLI: `npx @smithery/cli@latest mcp publish "https://mcp.toui.io" -n @toui/shorten-url` (confirm exact flags in their current UI).
+Hosted remote servers are listed by submitting the URL (no `smithery.yaml`). UI: `smithery.ai/new` — **Namespace `toui-io` / Server ID `url-shortener`** (full id `toui-io/url-shortener`, consistent with our official MCP Registry namespace `io.toui/url-shortener`; Server ID must be 3-39 chars, letters/numbers/hyphens/underscores only — no dots). CLI: `npx @smithery/cli@latest mcp publish "https://mcp.toui.io" -n toui-io/url-shortener` (confirm exact flags in their current UI).
 
 - **Name:** toui — URL shortener
 - **Tagline (≤ ~60 chars):** Shorten URLs and read click stats from your AI agent
 - **Server URL:** `https://mcp.toui.io`
 - **Description:**
   > toui is a URL shortener with a remote MCP server. The `shorten_url` tool turns any long link into a short toui.io link — no leaving your chat, no API key (OAuth). Permanent links, custom branded domains, and click analytics are available on the toui.io account. Works in Claude, ChatGPT, Cursor, Cline, and any MCP-capable agent.
-- **Smoke after listing:** `npx @smithery/cli@latest skill add toui/shorten-url`
+- **Smoke after listing:** `npx @smithery/cli@latest skill add toui-io/url-shortener`
 
 ---
 
