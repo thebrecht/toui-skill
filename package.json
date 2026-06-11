@@ -1,0 +1,13 @@
+{
+  "name": "toui-skill",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI agent skills + MCP connector for the toui.io URL shortener",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "toui-js": "^0.1.0"
+  }
+}
