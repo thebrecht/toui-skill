@@ -38,6 +38,8 @@ Open the submission issue: <https://github.com/cline/mcp-marketplace/issues/new?
 
 ## 3. cursor.directory
 
+> **✅ SUBMITTED 2026-06-11** — "toui — URL shortener" listed on the author profile (cursor.directory/u/brecht), now in the **verified/review** gate (manual review + Cursor SDK security scan) before it appears in the public directory/search. No further action; wait for approval. (Minor: fix author display-name typo "Btecht" → "Brecht" via Edit Profile.)
+
 Submit at `cursor.directory/plugins/new` (sign in, paste repo URL). Repo is public/open-source ✓. Manual review + automated security scan precede listing.
 
 - **Repo URL:** `https://github.com/thebrecht/toui-skill`
