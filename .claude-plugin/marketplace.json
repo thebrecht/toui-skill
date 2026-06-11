@@ -1,0 +1,13 @@
+{
+  "name": "toui",
+  "owner": { "name": "Brecht Huang", "url": "https://toui.io" },
+  "metadata": { "description": "toui.io agent skills", "version": "1.0.0" },
+  "plugins": [
+    {
+      "name": "toui-shorten",
+      "source": "./",
+      "description": "Shorten links and read click stats via toui.io.",
+      "skills": ["./skills/toui-shorten", "./skills/toui-shorten-zh"]
+    }
+  ]
+}

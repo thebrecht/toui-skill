@@ -1,0 +1,12 @@
+{
+  "name": "toui",
+  "displayName": "toui URL shortener",
+  "version": "1.0.0",
+  "description": "Shorten links and read click stats via toui.io, from your AI tools.",
+  "author": { "name": "Brecht Huang", "url": "https://toui.io" },
+  "homepage": "https://toui.io/docs",
+  "repository": "https://github.com/thebrecht/toui-skill",
+  "license": "MIT",
+  "keywords": ["url-shortener", "links", "mcp", "toui"],
+  "skills": ["./skills/toui-shorten", "./skills/toui-shorten-zh"]
+}
