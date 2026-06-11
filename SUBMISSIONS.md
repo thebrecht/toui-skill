@@ -24,6 +24,8 @@ Hosted remote servers are listed by submitting the URL (no `smithery.yaml`). UI:
 
 ## 2. Cline MCP Marketplace
 
+> **✅ SUBMITTED 2026-06-11** — issue [#1774](https://github.com/cline/mcp-marketplace/issues/1774), Open, pending review (manual + automated security scan). Both checkboxes ticked after a real Cline CLI test: full MCP dance (initialize/tools/list/tools/call) against `mcp.toui.io` returned `toui.io/VhEl1U`.
+
 Open the submission issue: <https://github.com/cline/mcp-marketplace/issues/new?template=mcp-server-submission.yml>
 
 - **GitHub Repo URL:** `https://github.com/thebrecht/toui-skill`
