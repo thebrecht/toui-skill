@@ -7,20 +7,24 @@ import { Toui } from 'toui-js';
  */
 export async function run(args, deps = {}) {
   const [cmd, ...rest] = args;
-  const client = new Toui({
-    apiKey: deps.apiKey ?? process.env.TOUI_API_KEY,
-    fetch: deps.fetch,
-  });
+  // Validate args BEFORE constructing the client, so a usage error surfaces
+  // even when TOUI_API_KEY is also missing (the constructor throws on a
+  // missing key, which would otherwise mask the more useful usage message).
+  const makeClient = () =>
+    new Toui({ apiKey: deps.apiKey ?? process.env.TOUI_API_KEY, fetch: deps.fetch });
 
   if (cmd === 'shorten') {
     const [url, title] = rest;
     if (!url) throw new Error('usage: shorten <url> [title]');
-    return await client.shorten(title ? { url, title } : { url });
+    return await makeClient().shorten(title ? { url, title } : { url });
   }
   if (cmd === 'stats') {
     const [code, days] = rest;
     if (!code) throw new Error('usage: stats <code> [days]');
-    return await client.stats(code, days ? { days: Number(days) } : {});
+    // Only pass a positive, finite day count — never send days: NaN.
+    const n = Number(days);
+    const opts = days && Number.isFinite(n) && n > 0 ? { days: n } : {};
+    return await makeClient().stats(code, opts);
   }
   throw new Error(`unknown command: ${cmd}`);
 }

@@ -53,3 +53,18 @@ test('shorten without url throws usage', async () => {
     /usage/,
   );
 });
+
+test('missing url surfaces usage even when the API key is also missing', async () => {
+  // Args are validated before the client is constructed, so the usage error
+  // wins over the constructor's "apiKey required" error.
+  await assert.rejects(
+    () => run(['shorten'], { fetch: fakeFetch({}) }), // no apiKey
+    /usage/,
+  );
+});
+
+test('non-numeric days is dropped, never sent as days=NaN', async () => {
+  const fetch = fakeFetch({ short_code: 'abc123', total_clicks: 5, daily: [] });
+  await run(['stats', 'abc123', 'notanumber'], { apiKey: 'toui_test', fetch });
+  assert.ok(!fakeFetch.lastUrl.includes('NaN'), `request URL leaked NaN: ${fakeFetch.lastUrl}`);
+});
