@@ -56,10 +56,22 @@ openclaw mcp add toui --url https://mcp.toui.io --transport streamable-http --au
 openclaw mcp doctor --probe
 ```
 
-- If the OAuth probe passes → ask the toui.io maintainer (me) to author the thin zh ClawHub skill (LINE allowed in zh), then `clawhub login && clawhub skill publish ...`.
-- If OAuth fails in OpenClaw's client → fall back to a Bearer add (`--header "Authorization: Bearer toui_<shorten-scope-key>"`) and record the OAuth gap as a follow-up. Do NOT publish "works with OpenClaw via OAuth" copy until the probe passes.
+- **✅ OpenClaw OAuth probe PASSED 2026-06-11** (`openclaw mcp doctor` → `toui: ok`). Gotcha hit + documented: OAuth code contains colons → `%3A` in the redirect URL; decode to `:` before `openclaw mcp login toui --code <code>`.
 
-> The ClawHub skill file is intentionally NOT authored yet — its instructions depend on whether the smoke lands on OAuth or Bearer.
+**ClawHub skill authored: `clawhub/toui-shorten/SKILL.md`** (zh, LINE allowed; format verified against github.com/openclaw/clawhub docs/skill-format.md). Publish:
+
+```bash
+cd /Users/brecht/Projects/combo/toui-skill
+clawhub login            # GitHub sign-in (or: clawhub login --token clh_...)
+clawhub whoami           # verify
+clawhub skill publish ./clawhub/toui-shorten \
+  --slug toui-shorten \
+  --name "toui 縮網址" \
+  --version 1.0.0 \
+  --changelog "Initial release"
+```
+
+(If `clawhub` isn't installed, get the CLI per clawhub.ai / github.com/openclaw/clawhub. Bundle ≤50MB; published skills are auto MIT-0; post-publish moderation may hide held releases.)
 
 ---
 
