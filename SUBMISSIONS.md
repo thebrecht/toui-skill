@@ -15,10 +15,10 @@ Hosted remote servers are listed by submitting the URL (no `smithery.yaml`). UI:
 - **Server URL:** `https://mcp.toui.io`
 - **Description:**
   > toui is a URL shortener with a remote MCP server. The `shorten_url` tool turns any long link into a short toui.io link — no leaving your chat, no API key (OAuth). Permanent links, custom branded domains, and click analytics are available on the toui.io account. Works in Claude, ChatGPT, Cursor, Cline, and any MCP-capable agent.
-- **✅ PUBLISHED 2026-06-11** — `toui-io/url-shortener`, Quality 90/100, discoverable via `npx @smithery/cli@latest mcp search "url shortener"` (shows alongside Bitly + Dub.co). Gateway connect URL: `https://server.smithery.ai/toui-io/url-shortener`.
+- **✅ PUBLISHED 2026-06-11** — `toui-io/url-shortener`, **Quality 100/100** (was 90; the deployed `outputSchema` is now counted → "Typed Output" badge + 100% uptime, confirmed 2026-06-12), discoverable via `npx @smithery/cli@latest mcp search "url shortener"` (shows alongside Bitly + Dub.co). Gateway connect URL: `https://server.smithery.ai/toui-io/url-shortener`.
 - **Install command is `mcp add`, NOT `skill add`** (ours is an MCP *server*, not a Smithery "skill"): `npx @smithery/cli@latest mcp add toui-io/url-shortener` — or paste `https://server.smithery.ai/toui-io/url-shortener` into the client.
 - **Remaining smoke (interactive, [USER]):** run `mcp add` and complete the browser OAuth to confirm the dance works *through* Smithery's gateway, then call `shorten_url`. If OAuth stalls through the gateway, add an optional Bearer-key parameter (Settings → Add Parameter) and re-publish.
-- _(Note: Quality score's "Output schemas 0/1" is a Smithery scorer quirk — the deployed `shorten_url` tool does declare `outputSchema`, verified in the worker bundle. Not worth chasing.)_
+- _(Resolved 2026-06-12: the earlier "Output schemas 0/1" was just Smithery's scorer lagging — after re-scan it counts the deployed `outputSchema`, score is now 100/100 with a "Typed Output" badge. No quirk; it just needed time.)_
 
 ---
 
@@ -38,7 +38,7 @@ Open the submission issue: <https://github.com/cline/mcp-marketplace/issues/new?
 
 ## 3. cursor.directory
 
-> **✅ SUBMITTED 2026-06-11** — "toui — URL shortener" listed on the author profile (cursor.directory/u/brecht), now in the **verified/review** gate (manual review + Cursor SDK security scan) before it appears in the public directory/search. No further action; wait for approval. (Minor: fix author display-name typo "Btecht" → "Brecht" via Edit Profile.)
+> **✅ SUBMITTED 2026-06-11** — "toui — URL shortener" listed on the author profile (cursor.directory/u/brecht), now in the **verified/review** gate (manual review + Cursor SDK security scan) before it appears in the public directory/search. No further action; wait for approval. (Author display-name typo "Btecht" → **"Brecht Huang" fixed 2026-06-12**; plugin "toui — URL shortener" shows on profile.)
 
 Submit at `cursor.directory/plugins/new` (sign in, paste repo URL). Repo is public/open-source ✓. Manual review + automated security scan precede listing.
 
