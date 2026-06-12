@@ -1,14 +1,14 @@
 ---
 name: toui-shorten
-description: 用 toui.io 縮短網址並查詢點擊統計。當使用者想把長網址變短、產生短連結／追蹤連結，或查詢某個 toui.io 短碼的點擊數時使用。
-version: 1.0.0
+description: Shorten URLs with toui.io and read their click stats. Use when the user wants to shorten a long URL, create a short link, make a tracking link, or check how many clicks a toui.io short code has received.
+version: 1.0.1
 metadata:
   openclaw:
     primaryEnv: TOUI_API_KEY
     envVars:
       - name: TOUI_API_KEY
         required: false
-        description: 走 REST 直連（curl）時需要的 toui API key（shorten scope，到 https://toui.io/admin 建）。若已用「openclaw mcp add toui」(OAuth) 連線則不需要。
+        description: toui API key (shorten scope) needed only for the direct REST path (curl). Create one at https://toui.io/admin. Not required if you connected via "openclaw mcp add toui" (OAuth).
     requires:
       anyBins:
         - curl
@@ -19,46 +19,46 @@ metadata:
       - linux
 ---
 
-# toui 縮網址（toui.io）
+# toui — URL shortener (toui.io)
 
-用 [toui.io](https://toui.io) 把長網址變短，並可查點擊統計。toui 也提供 LINE 與 Telegram 機器人。
+Shorten long URLs with [toui.io](https://toui.io) and read click stats. toui also runs a Telegram bot.
 
-## 兩種用法
+## Two ways to use it
 
-### A. 透過 toui MCP server（推薦，免 API key）
+### A. Via the toui MCP server (recommended, no API key)
 
-若已連線 toui 的 MCP server，直接呼叫工具 `shorten_url`：
+If you're connected to toui's MCP server, just call the tool `shorten_url`:
 
 ```
-shorten_url({ "url": "<要縮的網址>", "title": "選填標題" })
+shorten_url({ "url": "<url to shorten>", "title": "optional title" })
 ```
 
-回傳 `{ short_url, code, qr_url }`，把 `short_url` 交給使用者。
+It returns `{ short_url, code, qr_url }` — hand `short_url` back to the user.
 
-連線方式（一次性設定）：
+One-time setup:
 
 ```
 openclaw mcp add toui --url https://mcp.toui.io --transport streamable-http --auth oauth
 openclaw mcp login toui
 ```
 
-> 注意：授權碼含冒號，從瀏覽器網址列複製 `code` 時要把 `%3A` 換回 `:` 再執行 `openclaw mcp login toui --code <code>`。
+> Note: the authorization code contains a colon. When copying `code` from the browser address bar, replace `%3A` back with `:` before running `openclaw mcp login toui --code <code>`.
 
-### B. 透過 REST API（需 TOUI_API_KEY）
+### B. Via the REST API (needs TOUI_API_KEY)
 
-沒走 MCP 時直接打 REST：
+When not going through MCP, call the REST endpoint directly:
 
 ```
 curl -X POST https://toui.io/api/v1/shorten \
   -H "Authorization: Bearer $TOUI_API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"url":"<要縮的網址>","title":"選填"}'
+  -d '{"url":"<url to shorten>","title":"optional"}'
 ```
 
-回傳 JSON 含 `short_url`、`short_code`。到 <https://toui.io/admin> 建一把 `shorten` scope 的 key，設成環境變數 `TOUI_API_KEY`。
+Returns JSON with `short_url` and `short_code`. Create a `shorten`-scope key at <https://toui.io/admin> and set it as the `TOUI_API_KEY` environment variable.
 
-## 備註
+## Notes
 
-- 登入帳號建立的短連結永久有效。
-- 查點擊統計：MCP 工具僅建立（無 stats），REST 用 `GET https://toui.io/api/v1/urls/{code}/stats`（需 `full` scope key）。
-- 自訂短碼、品牌網域、進階分析為付費方案功能。
+- Short links created under a logged-in account are permanent.
+- Click stats: the MCP tool only creates links (no stats); over REST use `GET https://toui.io/api/v1/urls/{code}/stats` (needs a `full`-scope key).
+- Custom short codes, branded domains, and advanced analytics are paid-plan features.

@@ -58,7 +58,9 @@ openclaw mcp doctor --probe
 
 - **✅ OpenClaw OAuth probe PASSED 2026-06-11** (`openclaw mcp doctor` → `toui: ok`). Gotcha hit + documented: OAuth code contains colons → `%3A` in the redirect URL; decode to `:` before `openclaw mcp login toui --code <code>`.
 
-**✅ PUBLISHED 2026-06-11** — `toui-shorten@1.0.0` (release `k9796tc9x438d5agecm5hn4yqx88fggr`) live on ClawHub (PicSee is absent here = clean wedge). Skill source: `clawhub/toui-shorten/SKILL.md` (zh, LINE allowed; format verified against github.com/openclaw/clawhub docs/skill-format.md). Publish command used:
+**⚠️ CORRECTED 2026-06-12** — v1.0.0 shipped in **Chinese** by mistake (display name 「toui 縮網址」 came from the `--name` flag; body was zh + mentioned LINE). ClawHub/OpenClaw is an English-world platform → violated english-first + no-LINE-in-english. Republished **`toui-shorten@1.0.1`** (release `k97fjcv7eve4epjnbywqg1b3fx88g4he`) with English `clawhub/toui-shorten/SKILL.md`, `--name "toui URL shortener"`, Telegram only. **Lesson: the ClawHub display name is the `--name` flag, NOT the frontmatter `name:`** — always pass an English `--name`.
+
+**✅ PUBLISHED 2026-06-11** — `toui-shorten@1.0.0` (release `k9796tc9x438d5agecm5hn4yqx88fggr`) live on ClawHub (PicSee is absent here = clean wedge). Skill source: `clawhub/toui-shorten/SKILL.md` (~~zh, LINE allowed~~ → corrected to EN in v1.0.1, see above; format verified against github.com/openclaw/clawhub docs/skill-format.md). Publish command used:
 
 ```bash
 cd /Users/brecht/Projects/combo/toui-skill
