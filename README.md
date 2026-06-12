@@ -1,5 +1,7 @@
 # toui-skill
 
+[![smithery badge](https://smithery.ai/badge/toui-io/url-shortener)](https://smithery.ai/servers/toui-io/url-shortener)
+
 Use [toui.io](https://toui.io) — the URL shortener — from your AI tools.
 
 ## Fastest: MCP (no API key, OAuth)
