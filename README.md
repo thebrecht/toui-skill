@@ -15,6 +15,12 @@ toui runs a remote MCP server at **`https://mcp.toui.io`**. Add it to any MCP-ca
 
 The MCP server exposes one tool: `shorten_url`.
 
+> **OpenClaw manual-login tip:** if you complete the OAuth page and then paste the code into
+> `openclaw mcp login toui --code <code>` and it returns *"Invalid authorization code format"*,
+> the code was copied from the browser address bar still URL-encoded — replace every `%3A` with
+> a colon `:` and paste again. (Auto-capture clients like Cursor, Cline, Claude, and ChatGPT
+> decode this for you, so they never hit it.)
+
 ## Agent Skill (shorten + stats, for Claude Code / code-exec agents)
 
 Installs a `toui-shorten` skill that calls the toui REST API directly (needs an API key, adds click stats):
