@@ -2,7 +2,7 @@
 
 [![smithery badge](https://smithery.ai/badge/toui-io/url-shortener)](https://smithery.ai/servers/toui-io/url-shortener)
 
-Use [toui.io](https://toui.io) — the URL shortener — from your AI tools.
+Use [toui](https://toui.io) — the short-link service embedded in your AI workflow — from Claude, ChatGPT, and your other AI tools.
 
 ## Fastest: MCP (no API key, OAuth)
 

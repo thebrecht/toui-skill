@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "AI agent skills + MCP connector for the toui.io URL shortener",
+  "description": "AI agent skills + MCP connector for toui — the short-link service embedded in your AI workflow",
   "scripts": {
     "test": "node --test"
   },
