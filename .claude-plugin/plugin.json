@@ -2,7 +2,7 @@
   "name": "toui",
   "displayName": "toui URL shortener",
   "version": "1.0.0",
-  "description": "Shorten links and read click stats via toui.io, from your AI tools.",
+  "description": "Shorten links and read click stats via toui.io — the short-link service embedded in your AI workflow.",
   "author": { "name": "Brecht Huang", "url": "https://toui.io" },
   "homepage": "https://toui.io/docs",
   "repository": "https://github.com/thebrecht/toui-skill",

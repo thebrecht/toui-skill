@@ -6,7 +6,7 @@
     {
       "name": "toui-shorten",
       "source": "./",
-      "description": "Shorten links and read click stats via toui.io.",
+      "description": "Shorten links and read click stats via toui.io — the short-link service embedded in your AI workflow.",
       "skills": ["./skills/toui-shorten", "./skills/toui-shorten-zh"]
     }
   ]

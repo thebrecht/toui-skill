@@ -43,7 +43,7 @@ Open the submission issue: <https://github.com/cline/mcp-marketplace/issues/new?
 Submit at `cursor.directory/plugins/new` (sign in, paste repo URL). Repo is public/open-source ✓. Manual review + automated security scan precede listing.
 
 - **Repo URL:** `https://github.com/thebrecht/toui-skill`
-- **Short description:** Shorten URLs and read click analytics from Cursor via toui.io's MCP server (OAuth, no API key).
+- **Short description:** The short-link service embedded in your AI workflow — shorten links and read click stats from Cursor, via toui's MCP server (OAuth, no API key). _(updated 2026-06-20 to the self-def positioning; live on cursor.directory.)_
 
 ---
 
